@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Debugging Exercise</title>
+</head>
+<body>
+    <h1>Dashboard Status</h1>
+    <div id="display"></div>
+ 
+    <script>
+        // Declare variables and values
+        let userName = "Jane Doe";
+        let dailyGoal = 5;
+
+        // FIXED: Changed bonusTasks from a string to a number.
+        let bonusTasks = 2;
+
+        // Output message to console
+        // FIXED: Added missing parenthesis to console.log.
+        console.log("Checking status for: " + userName);
+
+        // Calculate weekly goal based on number of workdays (5) per week
+        // FIXED: Corrected the misspelled dailyGoal variable and changed multiplier from 15 to 5.
+        let weeklyGoal = dailyGoal * 5;
+
+        // Add bonusTasks to weeklyGoal.
+        // FIXED: Changed subtraction to addition for the total goal.
+        let totalGoal = weeklyGoal + bonusTasks;
+
+        // Output results to web page
+        document.write("User: " + userName + "<br>");
+
+        // FIXED: Concatenated totalGoal so its value displays instead of literal text.
+        document.write("Total Weekly Goal: " + totalGoal);
+ 
+    </script>
+</body>
+</html>
