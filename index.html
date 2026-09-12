@@ -16,23 +16,37 @@
     crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/script.js"></script>
     <title>My Interactive Dashboard</title>
 </head>
 <body>
     <h1>My Interactive Dashboard</h1>
     <p>This dashboard was created by Ricardo Morales for the WEB-115 course at Wake Tech.</p>
 
-    <script>
-        document.write("This dashboard demonstrates how JavaScript can be used to create interactive websites.");
-    </script>
-
     <!-- The <noscript> is for web browsers with JavaScript rendering disabled. -->
     <noscript>Unfortunately, your web browser does not support JavaScript.</noscript>
 
     <div class="container">
-    <div class="row">
-        <!-- Dashboard Content -->
+        <div class="row">
+            <div class="col" id="weekly-tasks">
+    <h2>Weekly Task Goals</h2>
+
+    <form id="goal-form">
+        <label for="user-name">Name:</label>
+        <input type="text" id="user-name">
+
+        <label for="daily-goal">Daily Task Goal:</label>
+        <input type="number" id="daily-goal">
+
+        <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+        <input type="number" id="bonus-tasks">
+
+        <button type="submit" id="goal-btn">Calculate Goal</button>
+    </form>
+
+    <p id="goal-message">This is where your results will appear.</p>
+
+    <script src="js/task-manager.js"></script>
+</div>
     </div>
 </div>
 </body>
