@@ -47,7 +47,33 @@
 
     <script src="js/task-manager.js"></script>
 </div>
+<div class="col" id="metric-converter">
+    <h2>Metric Converter</h2>
+
+    <form id="converter-form">
+        <label for="converter-value">Value:</label>
+        <input type="number" step="any" id="converter-value" required>
+
+        <label for="conversion-choice">Choose a Conversion:</label>
+        <select id="conversion-choice">
+            <option value="1">Inch to Centimeter</option>
+            <option value="2">Foot to Centimeter</option>
+            <option value="3">Yard to Meter</option>
+            <option value="4">Mile to Kilometer</option>
+            <option value="5">Centimeter to Inch</option>
+            <option value="6">Centimeter to Foot</option>
+            <option value="7">Meter to Yard</option>
+            <option value="8">Kilometer to Mile</option>
+        </select>
+
+        <button type="submit" id="convert-btn">Convert</button>
+    </form>
+
+    <p id="conversion-result">Your conversion result will appear here.</p>
+</div>
     </div>
 </div>
+
+    <script src="js/metric-converter.js"></script>
 </body>
 </html>
