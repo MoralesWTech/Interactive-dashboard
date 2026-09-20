@@ -13,7 +13,11 @@ This project is a web-based dashboard for WEB-115 to demonstrate interactive Jav
 
 This feature calculates a user's weekly task target based on their daily task goal and any weekly bonus tasks. The form collects the user's name, daily goal, and bonus tasks, then displays the calculated weekly total on the page.
 
-## Metric Converter Pseudocode
+## Imperial/Metric Converter
+
+This application allows users to convert between common Imperial and Metric units. It supports conversions involving inches, feet, yards, miles, centimeters, meters, and kilometers.
+
+## Logic and Pseudocode
 
 ```text
 BEGIN
