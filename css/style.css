@@ -6,3 +6,19 @@ body {
 h1 {
     text-align: center;
 }
+
+#weekly-tasks,
+#metric-converter {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 15px;
+}
+
+input,
+select,
+button {
+    margin: 5px;
+}
