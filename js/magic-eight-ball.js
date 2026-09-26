@@ -20,7 +20,7 @@ const reset = document.getElementById("reset");
 function displayAnswer() {
     const randomIndex = Math.floor(Math.random() * answers.length);
 
-    circle.style.display = "block";
+    circle.style.display = "flex";
     circle.innerHTML = answers[randomIndex];
 }
 
