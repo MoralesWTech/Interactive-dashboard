@@ -17,6 +17,12 @@ This feature calculates a user's weekly task target based on their daily task go
 
 This application allows users to convert between common Imperial and Metric units. It supports conversions involving inches, feet, yards, miles, centimeters, meters, and kilometers.
 
+## Magic Eight Ball
+
+The Magic Eight Ball feature allows users to type a yes/no question and click the Eight Ball image to receive a random response. The application checks that a question has been entered before displaying an answer.
+
+Technical features include a JavaScript array of possible responses, `Math.random()` and `Math.floor()` for random selection, `addEventListener()` for user interaction, `getElementById()` for page elements, `innerHTML` for displaying answers, and a reset button that clears the form and hides the response.
+
 ## Logic and Pseudocode
 
 ```text
