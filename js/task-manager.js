@@ -19,3 +19,29 @@ document.getElementById("goal-btn").addEventListener("click", function(event) {
 
     weeklyGoal(userName, dailyGoal, bonusTasks);
 });
+
+// Track the user's tasks.
+let myTasks = [];
+
+// Create the unordered list dynamically.
+const taskListContainer = document.getElementById("task-list");
+const userTasks = document.createElement("ul");
+
+userTasks.id = "user-tasks";
+taskListContainer.appendChild(userTasks);
+
+// Add a task when the Add Task button is clicked.
+document.getElementById("add-task").addEventListener("click", function () {
+    const taskName = document.getElementById("task-name").value;
+
+    if (taskName.trim() !== "") {
+        myTasks.push(taskName);
+
+        const listItem = document.createElement("li");
+        listItem.innerHTML = taskName;
+
+        userTasks.appendChild(listItem);
+
+        document.getElementById("task-name").value = "";
+    }
+});
