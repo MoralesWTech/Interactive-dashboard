@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amortization Calculator</title>
+</head>
+<body>
+
+    <p>Name: Ricardo Morales</p>
+    <p>Email: rmorales7@my.waketech.edu</p>
+    <p>Date: October 18, 2026</p>
+
+    <h1>Amortization Calculator</h1>
+
+    <button id="Button1">Calculate Amortization</button>
+
+    <div id="output"></div>
+
+    <script>
+        document.getElementById("Button1").addEventListener("click", function () {
+            let loanAmount = parseFloat(prompt("Enter the loan amount without commas:"));
+            let termYears = parseInt(prompt("Enter the loan term in years (15 or 30):"));
+
+            if (termYears !== 15 && termYears !== 30) {
+                alert("Loan term must be 15 or 30 years.");
+                return;
+        }
+
+         // Loan calculations
+        const interestRate = 0.0575;
+        const termMonths = termYears * 12;
+
+        const monthlyPayment =
+            ((interestRate / 12) * loanAmount) /
+            (1 - Math.pow(1 + (interestRate / 12), (termYears * -12)));
+
+        const totalInterest = (monthlyPayment * termMonths) - loanAmount;
+        const totalLoan = loanAmount + totalInterest;
+
+        // Display loan details
+        document.getElementById("output").innerHTML =
+            "<p>Mortgage term: " + termYears + " years</p>" +
+            "<p>Mortgage interest rate: 5.75%</p>" +
+            "<p>Mortgage amount: $" + loanAmount.toFixed(2) + "</p>" +
+            "<p>Total interest amount: $" + totalInterest.toFixed(2) + "</p>" +
+            "<p>Total mortgage amount: $" + totalLoan.toFixed(2) + "</p>" +
+            "<p>Monthly payment: $" + monthlyPayment.toFixed(2) + "</p>";
+
+        let balance = totalLoan;
+        let schedule = "<h2>Amortization Schedule</h2>";
+
+        for (let month = 1; month <= termMonths; month++) {
+            balance = balance - monthlyPayment;
+
+            if (balance < 0) {
+                balance = 0;
+            }
+
+            schedule +=
+                "<p>Month " + month +
+                " - Payment: $" + monthlyPayment.toFixed(2) +
+                " - Balance: $" + balance.toFixed(2) +
+                "</p>";
+
+            if (balance <= 0.01 || month === termMonths) {
+                balance = 0;
+                schedule += "<p>This is the Ending Amortization Calculator...</p>";
+                break;
+            }
+        }
+
+        document.getElementById("output").innerHTML += schedule;
+    });
+    </script>
+
+</body>
+</html>
