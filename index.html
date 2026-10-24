@@ -43,16 +43,30 @@
 
     <p id="goal-message">This is where your results will appear.</p>
 
+
     <div id="task-list">
     <h3>Weekly Task List</h3>
 
     <p>Enter a task below to organize your goals.</p>
 
-    <form>
+    <form id="task-form">
         <label for="task-name">Enter task:</label>
         <input type="text" id="task-name">
 
-        <button type="button" id="add-task">Add Task</button>
+        <label for="task-priority">Priority:</label>
+        <select id="task-priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <label for="task-important">
+            <input type="checkbox" id="task-important">
+            Important
+        </label>
+
+        <button type="submit" id="add-task">Add Task</button>
+        <button type="button" id="delete-tasks">Delete Task List</button>
     </form>
 </div>
 
